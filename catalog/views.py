@@ -37,7 +37,7 @@ from django.views import generic
 
 class BookListView(generic.ListView):
     model = Book
-    paginate_by = 1
+    paginate_by = 3
     # context_object_name = 'my_book_list'    # your own name for the list as template variable
     # queryset = Book.objects.filter(title__icontains='harry')[:3]
     # template_name = 'books/my_arbitrary_template_name_list.html' # my own template name / location
@@ -45,3 +45,12 @@ class BookListView(generic.ListView):
 
 class BookDetailView(generic.DetailView):
     model = Book
+
+
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 10
+
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
